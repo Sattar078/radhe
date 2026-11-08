@@ -1,0 +1,19 @@
+services:
+  # Standalone Backend Web Service (Node.js Express + MongoDB)
+  - type: web
+    name: radhe-radios-api
+    env: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: MONGODB_URI
+        value: mongodb+srv://sattaarkureshi87_db_user:dEzu6wvTKbILmDfB@cluster0.f7e6aar.mongodb.net/radhe_studio?retryWrites=true&w=majority
+      - key: CLIENT_URL
+        sync: false
